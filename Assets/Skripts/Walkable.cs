@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class Walkable : MonoBehaviour
 {
+
     public List<WalkPath> possiblePaths = new List<WalkPath>();
+
 
     public Transform previousBlock;
 
-    public float walkPointOffset = 0.5f;
-
+    
     public bool isStair = false;
+    public bool movingGround = false;
 
-    [Header("Offsets")]
-    public float walkPointOffset = -0.5f;
-    public float stairOffset = .4f;
+    public float walkPointOffset = 0.5f;
+    public float stairOffset = 0.4f;
 
-    public Vector3 GetWalkPoint()
-    {
-        float stair = isStair ? stairOffset : 0;
-        return transform.position + transform.up * walkPointOffset - transform.up * stair;
-    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.gray;
@@ -39,16 +36,10 @@ public class Walkable : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public Vector3 GetWalkPoint()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        float stair = isStair ? stairOffset : 0;
+        return transform.position + transform.up * walkPointOffset - transform.up * stair;
     }
 }
 
@@ -58,3 +49,8 @@ public class WalkPath
     public Transform target;
     public bool active = true;
 }
+
+
+
+
+
