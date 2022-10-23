@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 8353270300889414870}
   - component: {fileID: 6091834845192229717}
   - component: {fileID: 2253525389569379732}
-  - component: {fileID: 8164232864496785103}
+  - component: {fileID: 1448773011502005716}
+  - component: {fileID: 2693604665798510451}
+  - component: {fileID: 7169531542497359588}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -98,7 +100,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8164232864496785103
+--- !u!114 &1448773011502005716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,10 +109,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 9076401128959869589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f5192a873f9cc3448fec06b695be8b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f8582f1b9c380c4ab04e7888a0b3fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possiblePaths: []
+  possiblePaths:
+  - target: {fileID: 0}
+    active: 1
+  - target: {fileID: 0}
+    active: 0
+  previousBlock: {fileID: 0}
+  isStair: 0
+  movingGround: 0
+  walkPointOffset: 0.5
+  stairOffset: 0.4
+--- !u!114 &2693604665798510451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076401128959869589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8582f1b9c380c4ab04e7888a0b3fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possiblePaths:
+  - target: {fileID: 0}
+    active: 1
+  - target: {fileID: 0}
+    active: 1
+  previousBlock: {fileID: 0}
+  isStair: 0
+  movingGround: 0
+  walkPointOffset: 0.5
+  stairOffset: 0.4
+--- !u!114 &7169531542497359588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076401128959869589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8582f1b9c380c4ab04e7888a0b3fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possiblePaths:
+  - target: {fileID: 0}
+    active: 1
+  - target: {fileID: 0}
+    active: 1
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
