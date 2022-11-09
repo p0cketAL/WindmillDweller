@@ -29,9 +29,9 @@ public class PlayerControll : MonoBehaviour
         // get current cube under the player with RayCast  
         RayCastDown();
 
-        if (currentCube.GetComponent<Walkable>().movingGround)
+        if (currentCube.GetComponent<Walkable>().movingGround || currentCube.GetComponent<Walkable>().needToParent)
         {
-            transform.parent = currentCube.parent;
+            transform.parent = currentCube;
         }
         else
         {
@@ -158,12 +158,6 @@ public class PlayerControll : MonoBehaviour
     {  
         walking = true;
         move = GetComponent<Move>();
-        
-        for (int i = 0; i < finalPath.Count; i++)
-        {
-            indicator.transform.position = finalPath[i].position;
-            move.WalkingNow();
-            //while (transform.position != indicator.transform.position)
-        }       
+        move.WalkingNow();  
     }   
 }
