@@ -25,7 +25,7 @@ public class Move : MonoBehaviour
             
             startPosition = transform.position;
 
-            endPosition = point.position + Vector3.up;
+            endPosition = point.position + transform.up;
 
             float time = 0f;
 

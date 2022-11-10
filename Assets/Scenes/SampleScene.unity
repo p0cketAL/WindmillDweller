@@ -177,6 +177,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0, y: 0, z: 0}
 --- !u!65 &75486513
 BoxCollider:
@@ -476,6 +477,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 1
+  needToParent: 0
   offset: {x: 0, y: 0, z: 0.5}
 --- !u!43 &182378618
 Mesh:
@@ -483,7 +485,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39510
+  m_Name: pb_Mesh27552
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1818,6 +1820,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 1
+  needToParent: 0
   offset: {x: 0, y: 0.5, z: 0.5}
 --- !u!1 &275864443
 GameObject:
@@ -1967,6 +1970,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0, y: 0.5, z: 0}
 --- !u!4 &504022960 stripped
 Transform:
@@ -2088,6 +2092,7 @@ MonoBehaviour:
     active: 0
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &684999784
 GameObject:
@@ -3266,6 +3271,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0.5, y: 0.5, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -3436,6 +3442,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0, y: 0, z: 0}
 --- !u!65 &797192313
 BoxCollider:
@@ -3552,6 +3559,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 1
+  needToParent: 0
   offset: {x: 0, y: 0, z: 0}
 --- !u!65 &820532451
 BoxCollider:
@@ -3803,7 +3811,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898004403}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -13.41, y: -8.39, z: -4.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -3816,7 +3824,7 @@ Transform:
   - {fileID: 820532449}
   m_Father: {fileID: 0}
   m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &907666194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3604121435471071617, guid: bf8429126452be84284c1ce8f7c9bfbf, type: 3}
@@ -4023,6 +4031,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1188301902
 GameObject:
@@ -5201,6 +5210,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0.5, y: 0.5, z: 0}
 --- !u!1 &1365756423
 GameObject:
@@ -5256,6 +5266,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0, y: 0, z: 0}
 --- !u!65 &1365756426
 BoxCollider:
@@ -5357,6 +5368,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0, y: 0, z: 0}
 --- !u!65 &1499482211
 BoxCollider:
@@ -5582,7 +5594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93559dc6917d88b419c5ed85db944d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTime: 2
+  moveTime: 1
   whenMove:
     m_PersistentCalls:
       m_Calls: []
@@ -5800,6 +5812,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1711845501
 GameObject:
@@ -6395,6 +6408,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 1
+  needToParent: 0
   offset: {x: 0, y: 0.5, z: 0.5}
 --- !u!1 &1944091516
 GameObject:
@@ -6513,6 +6527,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1953194388
 GameObject:
@@ -6630,6 +6645,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1954305703
 GameObject:
@@ -6681,6 +6697,7 @@ MonoBehaviour:
   possiblePaths: []
   previousBlock: {fileID: 0}
   movingGround: 0
+  needToParent: 0
   offset: {x: 0, y: 0, z: 0}
 --- !u!65 &1954305706
 BoxCollider:
@@ -6862,6 +6879,7 @@ MonoBehaviour:
     active: 1
   previousBlock: {fileID: 0}
   movingGround: 1
+  needToParent: 0
   offset: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &7612587656715156062
 PrefabInstance:

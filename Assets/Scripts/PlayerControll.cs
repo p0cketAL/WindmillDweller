@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+
 public class PlayerControll : MonoBehaviour
 {
     public bool walking = false;
@@ -32,6 +33,7 @@ public class PlayerControll : MonoBehaviour
         if (currentCube.GetComponent<Walkable>().movingGround || currentCube.GetComponent<Walkable>().needToParent)
         {
             transform.parent = currentCube;
+            //currentCube.transform.Rotate(0.0f, 0.0f, -90.0f, Space.Self);
         }
         else
         {
