@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+
 public class PlayerControll : MonoBehaviour
 {
     public bool walking = false;
@@ -10,6 +11,7 @@ public class PlayerControll : MonoBehaviour
     public Transform currentCube;
     public Transform clickedCube;
     public Transform indicator;
+    private Move move;
     
 
     public List<Transform> finalPath = new List<Transform>();
@@ -28,16 +30,17 @@ public class PlayerControll : MonoBehaviour
         // get current cube under the player with RayCast  
         RayCastDown();
 
-        if (currentCube.GetComponent<Walkable>().movingGround)
+        if (currentCube.GetComponent<Walkable>().movingGround || currentCube.GetComponent<Walkable>().needToParent)
         {
-            transform.parent = currentCube.parent;
+            transform.parent = currentCube;
+            //currentCube.transform.Rotate(0.0f, 0.0f, -90.0f, Space.Self);
         }
         else
         {
             transform.parent = null;
         }
 
-        // click on the cube to more the player
+        // click on the cube to move the player
         if (Input.GetMouseButtonDown(0))
         {
             Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition); 
@@ -62,7 +65,7 @@ public class PlayerControll : MonoBehaviour
     {
         List<Transform> nextCubes = new List<Transform>();
         List<Transform> pastCubes = new List<Transform>();
-
+        Clear();
         foreach (WalkPath path in currentCube.GetComponent<Walkable>().possiblePaths)
         {
             if (path.active)
@@ -73,7 +76,7 @@ public class PlayerControll : MonoBehaviour
         }
 
         pastCubes.Add(currentCube);
-
+        Clear();
         ExploreCube(nextCubes, pastCubes);
         BuildPath();
     }
@@ -110,7 +113,7 @@ public class PlayerControll : MonoBehaviour
     }
 
     void ExploreCube(List<Transform> nextCubes, List<Transform> visitedCubes)
-    {
+    {   
         Transform current = nextCubes.First();
         nextCubes.Remove(current);
 
@@ -118,6 +121,7 @@ public class PlayerControll : MonoBehaviour
         {
             return;
         }
+
         foreach (WalkPath path in current.GetComponent<Walkable>().possiblePaths)
         {
             if (!visitedCubes.Contains(path.target) && path.active)
@@ -140,20 +144,22 @@ public class PlayerControll : MonoBehaviour
         Transform cube = clickedCube;
         while (cube != currentCube)
         {
-            finalPath.Add(cube);
             if (cube.GetComponent<Walkable>().previousBlock != null)
+            {
+                finalPath.Add(cube);
                 cube = cube.GetComponent<Walkable>().previousBlock;
+            }
             else
                 return;
         }
-
-        finalPath.Insert(0, clickedCube);
 
         FollowPath();
     }
 
     void FollowPath()
-    {
+    {  
         walking = true;
-    }
+        move = GetComponent<Move>();
+        move.WalkingNow();  
+    }   
 }

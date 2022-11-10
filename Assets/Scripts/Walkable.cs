@@ -11,11 +11,15 @@ public class Walkable : MonoBehaviour
     public Transform previousBlock;
 
     
-    public bool isStair = false;
+    //public bool isStair = false;
     public bool movingGround = false;
+    public bool needToParent = false;
 
-    public float walkPointOffset = 0.5f;
-    public float stairOffset = 0.4f;
+
+
+    //public float stairOffset = 0.4f;
+
+    public Vector3 offset;
     
 
 
@@ -23,7 +27,7 @@ public class Walkable : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.gray;
-        float stair = isStair ? 0.4f : 0;
+        //float stair = isStair ? 0.4f : 0;
         Gizmos.DrawSphere(GetWalkPoint(), 0.1f);
 
         if (possiblePaths == null)
@@ -40,8 +44,9 @@ public class Walkable : MonoBehaviour
 
     public Vector3 GetWalkPoint()
     {
-        float stair = isStair ? stairOffset : 0;
-        return transform.position + transform.up * walkPointOffset - transform.up * stair;
+        //float stair = isStair ? stairOffset : 0;
+        return transform.TransformPoint(offset);
+        //return transform.position + transform.up * walkPointOffset - transform.up * stair;
     }
 }
 
@@ -50,6 +55,7 @@ public class WalkPath
 {
     public Transform target;
     public bool active = true;
+    
 }
 
 
