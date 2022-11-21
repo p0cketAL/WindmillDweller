@@ -17,14 +17,11 @@ public class PlayerControll : MonoBehaviour
     public List<Transform> finalPath = new List<Transform>();
 
 
-
-    // Start is called before the first frame update
     void Start()
     {
         RayCastDown();
     }
 
-    // Update is called once per frame
     void Update()
     {
         // get current cube under the player with RayCast  
@@ -33,7 +30,6 @@ public class PlayerControll : MonoBehaviour
         if (currentCube.GetComponent<Walkable>().movingGround || currentCube.GetComponent<Walkable>().needToParent)
         {
             transform.parent = currentCube;
-            //currentCube.transform.Rotate(0.0f, 0.0f, -90.0f, Space.Self);
         }
         else
         {
@@ -142,7 +138,7 @@ public class PlayerControll : MonoBehaviour
     void BuildPath()
     {
         Transform cube = clickedCube;
-        while (cube != currentCube)
+        while ((cube != currentCube) && walking == false)
         {
             if (cube.GetComponent<Walkable>().previousBlock != null)
             {

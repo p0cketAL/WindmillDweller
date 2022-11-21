@@ -4,30 +4,19 @@ using UnityEngine;
 
 public class Walkable : MonoBehaviour
 {
-
     public List<WalkPath> possiblePaths = new List<WalkPath>();
-
 
     public Transform previousBlock;
 
-    
-    //public bool isStair = false;
     public bool movingGround = false;
     public bool needToParent = false;
-
-
-
-    //public float stairOffset = 0.4f;
 
     public Vector3 offset;
     
 
-
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.gray;
-        //float stair = isStair ? 0.4f : 0;
         Gizmos.DrawSphere(GetWalkPoint(), 0.1f);
 
         if (possiblePaths == null)
@@ -44,9 +33,7 @@ public class Walkable : MonoBehaviour
 
     public Vector3 GetWalkPoint()
     {
-        //float stair = isStair ? stairOffset : 0;
         return transform.TransformPoint(offset);
-        //return transform.position + transform.up * walkPointOffset - transform.up * stair;
     }
 }
 
