@@ -12,6 +12,5 @@ public class PathDisactivate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         keyCubes[currentIndex].GetComponent<Walkable>().possiblePaths[0].active = false;
-        currentIndex += 1;
     }
 }
