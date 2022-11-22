@@ -6,6 +6,7 @@ public class PathActivator : MonoBehaviour
 {
     public Transform cubePathActivator;
     public int pathIndex = 0;
+    private bool isDone = false;
     void Start()
     {
         
@@ -18,6 +19,9 @@ public class PathActivator : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        cubePathActivator.GetComponent<Walkable>().possiblePaths[pathIndex].active = true;
+        if(isDone == false){
+            cubePathActivator.GetComponent<Walkable>().possiblePaths[pathIndex].active = true;
+            isDone = true;
+        }
     }
 }
