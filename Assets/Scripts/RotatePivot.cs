@@ -20,7 +20,7 @@ public class RotatePivot : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        pivot.transform.Rotate(270.0f, 0.0f, 0.0f, Space.Self);
+        pivot.transform.Rotate(0.0f, 0.0f, 270.0f, Space.Self);
         cubeWithButton.GetComponent<Walkable>().possiblePaths[pathIndex].active = true;
     }
 }
