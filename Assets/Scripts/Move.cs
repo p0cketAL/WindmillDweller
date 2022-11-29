@@ -54,7 +54,7 @@ public class Move : MonoBehaviour
 
     }
     public void WalkingNow(){
-        StartCoroutine(WalkingCharacter(character.finalPath));       
+        StartCoroutine(WalkingCharacter(character.finalPath));
     }
 
 }

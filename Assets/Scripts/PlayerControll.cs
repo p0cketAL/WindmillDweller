@@ -156,6 +156,6 @@ public class PlayerControll : MonoBehaviour
     {  
         walking = true;
         move = GetComponent<Move>();
-        move.WalkingNow();  
+        move.WalkingNow();
     }   
 }
