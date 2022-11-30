@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
+
 
 public class Move : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class Move : MonoBehaviour
 
     public enum State {walk, stand}
     public State status = State.stand;
+    Sequence mySequence;
 
     IEnumerator WalkingCharacter(List<Transform>finalPath)
     {
@@ -36,7 +39,7 @@ public class Move : MonoBehaviour
                 float ratio = time/moveTime;
 
                 transform.position = Vector3.Lerp(startPosition, endPosition, ratio);
-
+                mySequence.Append(transform.DOLookAt(point.position, .1f, AxisConstraint.Y, Vector3.up));
                 yield return null;
             }
         }

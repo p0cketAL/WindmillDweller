@@ -10,6 +10,7 @@ public class Walkable : MonoBehaviour
 
     public bool movingGround = false;
     public bool needToParent = false;
+    public bool isStair;
 
     public Vector3 offset;
     
