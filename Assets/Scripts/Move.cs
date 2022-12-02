@@ -15,16 +15,17 @@ public class Move : MonoBehaviour
 
     public UnityEvent whenMove;
 
-
     public enum State {walk, stand}
     public State status = State.stand;
-    Sequence mySequence;
+    public Quaternion currentRotation;
 
-    IEnumerator WalkingCharacter(List<Transform>finalPath)
+
+    public IEnumerator WalkingCharacter(List<Transform>finalPath)
     {
         finalPath.Reverse();
         
         foreach(Transform point in finalPath) {
+            character.walking = true;
             
             startPosition = transform.position;
 
@@ -34,13 +35,16 @@ public class Move : MonoBehaviour
 
             while(time < moveTime){
 
+                Sequence mySequence = DOTween.Sequence();
                 time += Time.deltaTime;
 
                 float ratio = time/moveTime;
 
                 transform.position = Vector3.Lerp(startPosition, endPosition, ratio);
-                mySequence.Append(transform.DOLookAt(point.position, .1f, AxisConstraint.Y, Vector3.up));
+                mySequence.Join(transform.DOLookAt(point.position, .1f, AxisConstraint.Y, Vector3.up).SetLoops(1));
+                character.walking = true;
                 yield return null;
+                character.walking = false;
             }
         }
     }
@@ -54,10 +58,9 @@ public class Move : MonoBehaviour
 
     void Update() 
     {
-
+        //StopCoroutine(WalkingCharacter(character.finalPath));
     }
     public void WalkingNow(){
         StartCoroutine(WalkingCharacter(character.finalPath));
-    }
-
+    }   
 }
