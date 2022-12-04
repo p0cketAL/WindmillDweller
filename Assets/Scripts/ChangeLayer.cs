@@ -18,7 +18,11 @@ public class ChangeLayer : MonoBehaviour
 
     void OnTriggerStay(Collider other) {
         character = GameObject.FindGameObjectWithTag("Player");
-        int LayerTopLayer = LayerMask.NameToLayer("Top Layer");
-        character.layer = LayerTopLayer;
+        //int LayerTopLayer = LayerMask.NameToLayer("Top Layer");
+        foreach (Transform child in transform)
+        {
+            child.gameObject.layer = 3;
+        }
+            //character.layer = LayerTopLayer;
     }    
 }

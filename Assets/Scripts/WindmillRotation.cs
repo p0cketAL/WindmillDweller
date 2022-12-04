@@ -5,12 +5,19 @@ using DG.Tweening;
 
 public class WindmillRotation : MonoBehaviour
 {
+    private bool hasTriggered = false;
     void FixedUpdate()
     {
-        transform.Rotate(new Vector3(0f, 0f, 100f) * Time.deltaTime);
-       
+        if (hasTriggered)
+        {
+            transform.Rotate(new Vector3(0f, 0f, 100f) * Time.deltaTime);
+        }
     }
-   
+
+    private void OnTriggerEnter(Collider other)
+    {
+        hasTriggered = true;
+    }
     //With Coroutine
     //IEnumerator spin()
     //{
@@ -34,7 +41,7 @@ public class WindmillRotation : MonoBehaviour
     //{
     //    StartCoroutine(spin());
     //}
-    
+
     //with DOTween
     //void Start()
     //{

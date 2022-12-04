@@ -8,14 +8,16 @@ public class PlayerAnimation : MonoBehaviour
     public PlayerControll player;
 
      void Start()
-    {
+     {
         animator = GetComponent<Animator>();
-        player.walking = false;
-    }
+        player = GetComponent<PlayerControll>();
+     }
 
     void Update()
     {
         if (player.walking == true)
-            animator.SetBool("Walking", player.walking);
+        {
+            animator.SetBool("IsWalking", true);
+        }
     }
 }

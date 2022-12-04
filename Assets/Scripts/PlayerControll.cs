@@ -143,13 +143,12 @@ public class PlayerControll : MonoBehaviour
     {
         Transform cube = clickedCube;
         while (cube != currentCube) 
-            //&& walking == false)
+            //!walking)
         {
             if (cube.GetComponent<Walkable>().previousBlock != null)
             {
                 finalPath.Add(cube);
                 cube = cube.GetComponent<Walkable>().previousBlock;
-                
             }
             else
                 return;

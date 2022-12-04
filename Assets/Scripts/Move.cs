@@ -18,6 +18,9 @@ public class Move : MonoBehaviour
     public enum State {walk, stand}
     public State status = State.stand;
     public Quaternion currentRotation;
+    public AxisConstraint constraint = AxisConstraint.Y;
+
+    public Animator animator;
 
 
     public IEnumerator WalkingCharacter(List<Transform>finalPath)
@@ -26,7 +29,7 @@ public class Move : MonoBehaviour
         
         foreach(Transform point in finalPath) {
             character.walking = true;
-            
+
             startPosition = transform.position;
 
             endPosition = point.position + transform.up;
@@ -41,7 +44,7 @@ public class Move : MonoBehaviour
                 float ratio = time/moveTime;
 
                 transform.position = Vector3.Lerp(startPosition, endPosition, ratio);
-                mySequence.Join(transform.DOLookAt(point.position, .1f, AxisConstraint.Y, Vector3.up).SetLoops(1));
+                mySequence.Join(transform.DOLookAt(point.position, .1f, constraint, Vector3.up).SetLoops(1));
                 character.walking = true;
                 yield return null;
                 character.walking = false;
@@ -58,9 +61,16 @@ public class Move : MonoBehaviour
 
     void Update() 
     {
-        //StopCoroutine(WalkingCharacter(character.finalPath));
+        if (character.walking)
+        {
+            //animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            //animator.SetBool("IsWalking", false);
+        }
     }
     public void WalkingNow(){
         StartCoroutine(WalkingCharacter(character.finalPath));
-    }   
+    }
 }
