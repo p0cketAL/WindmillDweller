@@ -57,7 +57,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _normalStrength: 1.77
+    - _normalStrength: 0.86
     m_Colors:
     - _DeepColor: {r: 1, g: 0.6745283, b: 0.7677244, a: 0}
     - _ShallowColor: {r: 0.20714669, g: 0.78017104, b: 0.8962264, a: 0}
