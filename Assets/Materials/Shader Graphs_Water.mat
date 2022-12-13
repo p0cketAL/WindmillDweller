@@ -59,6 +59,6 @@ Material:
     - _QueueOffset: 0
     - _normalStrength: 0.86
     m_Colors:
-    - _DeepColor: {r: 1, g: 0.6745283, b: 0.7677244, a: 0}
+    - _DeepColor: {r: 0.70980394, g: 0.7960785, b: 0.62352943, a: 0}
     - _ShallowColor: {r: 0.20714669, g: 0.78017104, b: 0.8962264, a: 0}
   m_BuildTextureStacks: []

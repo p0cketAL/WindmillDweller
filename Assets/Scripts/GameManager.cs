@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             int multiplier = Input.GetKey(KeyCode.RightArrow) ? -1 : 1;
-            pivots[index].DORotate(new Vector3(0, 0, 90 * multiplier), .6f, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+            pivots[index].DORotate(new Vector3(0, 0, 90 * multiplier), .6f, RotateMode.WorldAxisAdd).SetEase(Ease.InOutBounce);
         }
     }
 }

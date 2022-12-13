@@ -16,8 +16,9 @@ public class LoadNext : MonoBehaviour
     public void NextScene()
     {
         SceneManager.LoadScene(buildIndex + 1);
-    }   
-            
-        
-    
+    }
+    public void BackToMain()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

@@ -5,9 +5,9 @@ using UnityEngine.Events;
 using DG.Tweening;
 
 
-public class Move : MonoBehaviour
+public class MoveV2 : MonoBehaviour
 {
-    private PlayerControll character;
+    private PlayerControllV2 character;
     private Vector3 startPosition;
     private Vector3 endPosition;
 
@@ -38,13 +38,13 @@ public class Move : MonoBehaviour
 
             while(time < moveTime){
 
-                Sequence mySequence = DOTween.Sequence();
+                //Sequence mySequence = DOTween.Sequence();
                 time += Time.deltaTime;
 
                 float ratio = time/moveTime;
 
                 transform.position = Vector3.Lerp(startPosition, endPosition, ratio);
-                mySequence.Join(transform.DOLookAt(point.position, .1f, constraint, transform.up).SetLoops(1));
+                //mySequence.Join(transform.DOLookAt(point.position, .1f, constraint, transform.up).SetLoops(1));
                 character.walking = true;
                 yield return null;
                 character.walking = false;
@@ -54,7 +54,7 @@ public class Move : MonoBehaviour
 
     void Start()
     {
-        character = GetComponent<PlayerControll>();
+        character = GetComponent<PlayerControllV2>();
         startPosition = character.currentCube.transform.position;
         endPosition = character.indicator.transform.position;
     }
@@ -63,11 +63,11 @@ public class Move : MonoBehaviour
     {
         if (character.walking)
         {
-            animator.SetBool("IsWalking", true);
+            //animator.SetBool("IsWalking", true);
         }
         else
         {
-            animator.SetBool("IsWalking", false);
+            //animator.SetBool("IsWalking", false);
         }
     }
     public void WalkingNow(){
