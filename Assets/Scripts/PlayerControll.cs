@@ -101,6 +101,7 @@ public class PlayerControll : MonoBehaviour
     }
     void Clear()
     {
+    
         walking = false;
         foreach (Transform t in finalPath)
         {
@@ -161,6 +162,6 @@ public class PlayerControll : MonoBehaviour
     {
         move = GetComponent<Move>();
         move.WalkingNow();
-        walking = false;
-    }   
+
+    }
 }

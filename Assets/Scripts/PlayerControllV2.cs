@@ -40,7 +40,7 @@ public class PlayerControllV2 : MonoBehaviour
         // click on the cube to move the player
         if (Input.GetMouseButtonDown(0) && !walking)
         {
-            Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition); 
+            Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit mouseHit;
 
             if (Physics.Raycast(mouseRay, out mouseHit))
@@ -55,7 +55,7 @@ public class PlayerControllV2 : MonoBehaviour
                     indicator.position = mouseHit.transform.GetComponent<Walkable>().GetWalkPoint();
                 }
             }
-        }   
+        }
     }
 
     void FindPath()
@@ -83,7 +83,7 @@ public class PlayerControllV2 : MonoBehaviour
         Ray playerRayCast = new Ray(transform.position, -transform.up);
 
         RaycastHit playerHit;
-      
+
 
         if (Physics.Raycast(playerRayCast, out playerHit))
         {
@@ -108,12 +108,12 @@ public class PlayerControllV2 : MonoBehaviour
         }
         finalPath.Clear();
         //Debug.Log("Clear");
-        
+
         //StopCoroutine(move.WalkingCharacter(finalPath));
     }
 
     void ExploreCube(List<Transform> nextCubes, List<Transform> visitedCubes)
-    {   
+    {
         Transform current = nextCubes.First();
         nextCubes.Remove(current);
 
@@ -142,8 +142,8 @@ public class PlayerControllV2 : MonoBehaviour
     void BuildPath()
     {
         Transform cube = clickedCube;
-        while (cube != currentCube) 
-            //!walking)
+        while (cube != currentCube)
+        //!walking)
         {
             if (cube.GetComponent<Walkable>().previousBlock != null)
             {
@@ -161,6 +161,5 @@ public class PlayerControllV2 : MonoBehaviour
     {
         move = GetComponent<MoveV2>();
         move.WalkingNow();
-        walking = false;
-    }   
+    }
 }
